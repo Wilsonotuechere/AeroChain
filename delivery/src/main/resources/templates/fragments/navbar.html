@@ -1,0 +1,18 @@
+<nav th:fragment="navbar" class="fixed w-full bg-white/95 backdrop-blur z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-7 h-7 bg-gradient-to-br from-indigo to-coral rounded-lg"></div>
+                <span class="text-2xl font-bold text-gray-900">AeroChain</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="/create-item" class="text-gray-600 hover:text-indigo transition-colors">
+                    Inventory Hub
+                </a>
+                <a href="/create-vehicle" class="text-gray-600 hover:text-indigo transition-colors">
+                    Vehicle Management
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>

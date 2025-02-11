@@ -1,0 +1,133 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroChain | Optimized Cargo Ecosystems</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'indigo': '#2E3A8C',
+                        'coral': '#FF6B6B',
+                        'mint': '#A8DACC',
+                        'cloud': '#F8FBFE'
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'system-ui', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'depth': '0 25px 50px -12px rgba(0,0,0,0.08)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        
+        .fluid-gradient {
+            background: linear-gradient(135deg, #FF6B6B20 0%, #2E3A8C10 100%);
+        }
+
+        .text-gradient {
+            background: linear-gradient(45deg, #2E3A8C 30%, #FF6B6B 80%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hover-tilt {
+            transition: transform 0.3s ease;
+        }
+        .hover-tilt:hover {
+            transform: perspective(1000px) rotateX(5deg) rotateY(-2deg);
+        }
+    </style>
+</head>
+<body class="bg-cloud">
+    <!-- Navigation -->
+    <nav th:replace="~{fragments/navbar :: navbar}"></nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-28 px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <h1 class="text-5xl font-bold text-gray-900 leading-tight">
+                        Precision Logistics
+                        <span class="block text-gradient">Engineered for Tomorrow</span>
+                    </h1>
+                    <p class="text-xl text-gray-600/90">
+                        Dynamic routing algorithms and carbon-neutral solutions for modern supply chains.
+                    </p>
+                    <div class="flex gap-6">
+                        <div class="p-6 bg-white rounded-2xl shadow-depth border border-cloud">
+                            <div class="text-3xl font-bold text-coral">12H</div>
+                            <div class="text-sm text-gray-500">Avg. Time Saved</div>
+                        </div>
+                    </div>
+                    <a href="/create-vehicle" class="inline-flex items-center bg-indigo text-white px-8 py-4 rounded-xl hover:bg-indigo/90 gap-2">
+                        Get started
+                        <svg class="w-5 h-5 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="relative hover-tilt">
+                    <div class="absolute -inset-8 bg-indigo/5 rounded-[40px] transform rotate-3"></div>
+                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800" 
+                         alt="Smart warehouse" 
+                         class="rounded-[32px] border-8 border-white shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-24 bg-indigo/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Strategic Advantages</h2>
+                <p class="text-xl text-gray-600/90 max-w-2xl mx-auto">
+                    Next-generation tools for sustainable logistics operations
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 bg-white rounded-2xl shadow-depth transition-all hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-mint/20 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-indigo" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M12 8v8m-4-4h8"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Route Optimization</h3>
+                    <p class="text-gray-600/90">AI-powered pathfinding for efficient deliveries</p>
+                </div>
+                <div class="p-8 bg-white rounded-2xl shadow-depth transition-all hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-coral/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-coral" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M9 12l2 2 4-4m-4 8a8 8 0 110-16 8 8 0 010 16z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Real-time Tracking</h3>
+                    <p class="text-gray-600/90">Live monitoring and status updates</p>
+                </div>
+                <div class="p-8 bg-white rounded-2xl shadow-depth transition-all hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-indigo/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-mint" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M3 12h18M3 6h18M3 18h18"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Fleet Management</h3>
+                    <p class="text-gray-600/90">Comprehensive vehicle oversight system</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer th:replace="~{fragments/footer :: footer}"></footer>
+</body>
+</html>
