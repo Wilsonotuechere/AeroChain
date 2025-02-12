@@ -23,4 +23,16 @@ public class ItemController {
         Item newItem = itemService.createItem(item);
         return ResponseEntity.ok(newItem);
     }
+    @DeleteMapping("/delete/{id}")
+    public String deleteItem(@PathVariable Long id, RedirectAttributes redirectAttributes) {
+        try {
+            itemService.deleteItem(id);
+            redirectAttributes.addFlashAttribute("message", "Item deleted successfully");
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("error", "Error deleting item: " + e.getMessage());
+        }
+        return "redirect:/create-item";
+    } 
+}
+
 }
