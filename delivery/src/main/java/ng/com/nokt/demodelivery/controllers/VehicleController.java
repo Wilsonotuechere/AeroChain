@@ -54,4 +54,16 @@ public class VehicleController {
         }
 
     }
+     @DeleteMapping("/delete/{id}")
+    public String deleteVehicle(@PathVariable Long id, RedirectAttributes redirectAttributes) {
+        try {
+            vehicleService.deleteVehicle(id);
+            redirectAttributes.addFlashAttribute("message", "Vehicle deleted successfully");
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("error", "Error deleting vehicle: " + e.getMessage());
+        }
+        return "redirect:/create-vehicle";
+    } 
+}
+
 }
